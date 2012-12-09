@@ -1,0 +1,49 @@
+﻿@model NK.Web.ViewModels.Account.UserLoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="span8">
+            @using(Html.BeginForm("LogIn","Account",FormMethod.Post, new {@class="well form-horizontal"}))
+            {
+
+                <div class="page-header">
+                    <h1>Enter your account information :</h1>
+
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Username :</label>
+                    <div class="controls">
+                        @Html.TextBoxFor(x => x.Username, new {placehodler="Enter your username...."})
+                        <span class="help-inline">@Html.ValidationMessageFor(x=>x.Username)</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">Password :</label>
+                    <div class="controls">
+                        @Html.PasswordFor(x => x.Password, new {placehodler="Enter your password...."})
+                        <span class="help-inline">@Html.ValidationMessageFor(x=>x.Password)</span>
+                    </div>
+                </div>
+                
+                <div class="control-group error">
+                    <div class="controls">
+                        <div class="help-block">
+                            @Html.ValidationSummary(true,null,new{@class="error"})
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <input type="submit" class="btn btn-primary"  value="Login!" />
+                    <a class="btn btn-success" href="@Url.Action("LogIn")">Register!</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

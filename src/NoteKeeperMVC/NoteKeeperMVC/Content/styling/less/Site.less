@@ -1,0 +1,162 @@
+html {
+    height: 100%;
+}
+
+body {
+    padding-top: 60px;
+    background-image:url('/Content/styling/images/swirl.png');
+    background-repeat:repeat;
+}
+
+// The edit dialog for Boards
+#board-edit-dialog{
+	label{
+	}
+
+	input{
+	}
+}
+
+#NoteDialog{
+	input{
+		width:260px;
+	}
+
+	textarea{
+		width:260px;
+		height:200px;
+		resize:none;
+	}
+}
+
+#main-container{
+	position: relative;
+	width: 100%;
+}
+
+// The active board wrapper
+#active-board{
+	width: 95%;
+	margin:0px auto;
+	margin-top:10px;
+	position: relative;
+}
+
+
+
+#board
+{
+	height:100%;
+
+	-moz-border-image: url('/Content/styling/images/wood-frame.png') 72 55 72 55;
+    -webkit-border-image: url('/Content/styling/images/wood-frame.png') 72 55 72 55;
+    -o-border-image: url('/Content/styling/images/wood-frame.png') 72 55 72 55;
+	border-image: url('/Content/styling/images/wood-frame.png') 72 55 72 92;
+
+	border-color: #f4be52; 
+	border-style: inset; 
+	border-width: 30px;
+
+    position:relative;
+    padding: 5px;
+    background-image:url('/Content/styling/images/diagonal_noise_color.png');
+    background-repeat:repeat;
+
+    -moz-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+
+	// The notes inside the board
+	.note {
+		height:200px;
+		width:200px;
+		padding: 5px;
+		position:absolute;
+		border:1px solid #111;
+		border-radius:5px 5px 5px 5px;
+		font-family: 'Rancho', cursive;
+
+
+		-moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.4);
+		-webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.4);
+		box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.4);
+    
+		background-image:url("../images/yellowPapper.png");
+
+		.text{
+			padding:5px;
+			text-align:center;
+			font-size: 18px;
+		}
+
+		.header{
+			border-bottom:2px solid Brown;
+			font-size:24px;
+			height:40px;
+			text-align:center;
+			color:black;
+			padding-top:5px;
+			cursor:move;	
+		}
+
+		.closeButton {
+			width:20px;
+			height:20px;
+			position: absolute;
+			text-align:center;
+			top:3px;
+			right:3px;
+			color:#D44848;
+			font-family: 'Fredoka One', cursive;
+		}
+
+		.closeButton:hover {
+			cursor: pointer;
+			color:#F78888;
+		}
+
+		.edit-button {
+			position:absolute;
+			top:3px;
+			left:3px;
+		}	
+	}
+}
+
+.header-message {
+    text-align: center;
+}
+
+.board-commands-wrapper {
+    display: block;
+    padding: 5px;
+    padding-bottom: 0px;
+    margin-left: 100px;
+
+	h1 {
+		text-align: left;
+		float: left;
+		margin-left: 20px;
+		display: block;
+		margin-top: 3px;
+	}
+
+	.button-commands 
+	{
+		display: block;
+		float: left;
+		margin-left: 20px;  
+	}
+}
+
+.hidden{
+     display:none;   
+}
+
+.no-select{
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+}

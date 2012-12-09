@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @*Include fonts from google web font api*@
+    <link href='http://fonts.googleapis.com/css?family=Rancho'
+        rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+    
+    <!--Include all the css -->
+    @Styles.Render("~/bundle/css")
+
+    @RenderSection("Head", false)
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a href="#" class="brand">Note Keeper</a>
+
+                <ul class="nav">
+                    <li><a href="@Url.Action("Index","Home")">Home</a></li>
+                    
+                    @*Render the boards page if the user is authenticated and can access his board page*@
+                    @if(Html.UserLoggedIn())
+                    {
+                        <li><a href="@Url.Action("Index","Application")">Boards Page</a></li>    
+                    }
+                    
+                    @RenderSection("ExtraNav", false)
+                </ul>
+                @if (Html.UserLoggedIn())
+                {
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <span>@User.Identity.Name</span>
+                                <b class="caret"></b>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("LogOut", "Account")">Log Out!</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+</body>
+
+@Scripts.Render("~/bundle/js")
+@Scripts.Render("~/bundle/bootstrapjs")
+@*For any scripts required on the inheriting views*@
+@RenderSection("ScriptAfterBody", false)
+</html>

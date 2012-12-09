@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NK.Web", "NoteKeeperMVC\NK.Web.csproj", "{A3189488-F02F-4DD8-81FC-B5814DF164BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NK.Model", "NK.Model\NK.Model.csproj", "{BE00EEA9-AE25-4122-954E-AF6AF1B40B1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NK.Services", "NK.Services\NK.Services.csproj", "{64F8B809-9102-4700-94E5-EC9FECBB54A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64F8B809-9102-4700-94E5-EC9FECBB54A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64F8B809-9102-4700-94E5-EC9FECBB54A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64F8B809-9102-4700-94E5-EC9FECBB54A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64F8B809-9102-4700-94E5-EC9FECBB54A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3189488-F02F-4DD8-81FC-B5814DF164BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3189488-F02F-4DD8-81FC-B5814DF164BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3189488-F02F-4DD8-81FC-B5814DF164BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3189488-F02F-4DD8-81FC-B5814DF164BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE00EEA9-AE25-4122-954E-AF6AF1B40B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE00EEA9-AE25-4122-954E-AF6AF1B40B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE00EEA9-AE25-4122-954E-AF6AF1B40B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE00EEA9-AE25-4122-954E-AF6AF1B40B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

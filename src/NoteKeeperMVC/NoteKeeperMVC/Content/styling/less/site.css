@@ -1,0 +1,18 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+#note-title-input{width:260px;}
+#note-text-input{width:260px;height:200px;resize:none;}
+.edit-button{position:absolute;top:3px;left:3px;}
+html{height:100%;}
+body{padding-top:60px;}
+#board{border:5px solid #555;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;height:500px;position:relative;padding:5px;background-color:#ffd399;-moz-box-shadow:5px 5px 15px 5px rgba(0, 0, 0, 0.5);-webkit-box-shadow:5px 5px 15px 5px rgba(0, 0, 0, 0.5);box-shadow:5px 5px 15px 5px rgba(0, 0, 0, 0.5);}
+#select-board-meessage{text-align:center;}
+.board-commands-wrapper{display:block;padding:5px;padding-bottom:0px;}
+.board-commands-wrapper h1{text-align:left;float:left;margin-left:20px;display:block;margin-top:3px;}
+.button-commands{display:block;float:left;margin-left:20px;}
+.note{height:200px;width:200px;padding:5px;position:absolute;border:1px solid #111;border-radius:5px 5px 5px 5px;font-family:'Rancho',cursive;-moz-box-shadow:5px 5px 10px 5px rgba(0, 0, 0, 0.4);-webkit-box-shadow:5px 5px 10px 5px rgba(0, 0, 0, 0.4);box-shadow:5px 5px 10px 5px rgba(0, 0, 0, 0.4);background-image:url("../images/yellowPapper.png");}
+.note .text{padding:5px;text-align:center;}
+.note .header{border-bottom:2px solid Brown;font-size:24px;height:40px;text-align:center;color:black;padding-top:5px;cursor:move;}
+.note .closeButton{width:20px;height:20px;position:absolute;text-align:center;top:3px;right:3px;color:#D44848;font-family:'Fredoka One',cursive;}
+.note .closeButton:hover{cursor:pointer;color:#F78888;}
+.hidden{display:none;}
+.no-text-select{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;}

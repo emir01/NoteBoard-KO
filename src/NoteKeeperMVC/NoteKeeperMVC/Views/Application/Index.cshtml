@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "User Boards";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@*We are going to render the extra board navigation here*@
+@section ExtraNav
+{
+    <li class="divider-vertical"></li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <span data-bind="text:activeBoard().boardName"></span>
+            <b class="caret"></b>
+        </a>
+        @*This is the dropdown menu that lists all the boards and is bound to the application Boards observable
+        collection *@
+        <ul class="dropdown-menu">
+            <!-- ko foreach: userBoards -->
+            <li><a class="active" href="#" data-bind="text:boardName, click:$root.setAsActiveBoard"></a></li>
+            <!-- /ko -->
+            <li class="divider"></li>
+            <li><a href="#" data-bind="click:addBoard">Add Board</a></li>
+        </ul>
+    </li>
+}
+
+<!-- ko if: boardViewModel().boardId() != undefined && boardViewModel().boardId() != ""-->
+<div class="hidden" id="main-container" data-bind="with:boardViewModel()">
+    <div class="board-commands-wrapper" data-bind="visible:boardName() != ''">
+        <h1><span data-bind="text:boardName()"></span> : </h1>
+        <div class="button-commands">
+            <button id="addNote" class="btn btn-primary" style="margin: 10px" data-bind="click:newNoteDialog">
+                <i class="icon-white icon-plus"></i>
+                Add
+                Note
+            </button>
+
+            <button class="btn btn-success" data-bind="click:$root.editBoard">
+                <i class="icon-white icon-edit"></i>
+                Edit Name
+            </button>
+
+            <button class="btn btn-success" data-bind="click:$root.editBoard">
+                <i class="icon-white icon-wrench"></i>
+                Board Settings
+            </button>
+
+            <button class="btn btn-danger" data-bind="click:$root.deleteBoard">
+                <i class="icon-white icon-trash"></i>
+                Remove Board
+            </button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+        
+    <div id="active-board">
+        @*The add note button will be visibile if the Board View Model is set by checking the board name*@
+        <div id="board" data-bind="foreach:{data:notes},stackableElements:'.header', stackTriggerParentSelector:'.note'">
+            <div class="note" data-bind="style:{'top':top,'left':left}, draggable:true,dragCallback:$parent.dragCallback">
+                <button data-bind="click:$parent.showEditDialog" class="edit-button btn btn-warning"><i class="icon-edit"></i></button>
+                <div data-bind="click:$parent.removeNote" class="closeButton no-text-select">
+                    X
+                </div>
+                <div class="header">
+                    <span class="value" data-bind="text:title"></span>
+
+                </div>
+                <div class="text" data-bind="text:text">
+                </div>
+            </div>
+        </div>
+
+        <div id="NoteDialog" class="hide" data-bind="with:activeNote">
+            <label for="note-title-input">Title :</label>
+            <input type="text" id="note-title-input" data-bind="value:editingTitle" />
+
+            <label for="note-text-input">Text :</label>
+            <textarea id="note-text-input" data-bind="value:editingText"></textarea>
+        </div>
+    </div>
+        
+</div>
+<!-- /ko -->
+<!-- ko ifnot: boardViewModel().boardId() != undefined &&  boardViewModel().boardId() != ""-->
+<h2 class="header-message">Please Select or Create a new Board</h2>
+<!-- /ko -->
+
+<div id="board-edit-dialog" class="hide" data-bind="with:activeEditingBoard">
+    <label for="board-title-input">Board Name : </label>
+    <input type="text" id="board-title-input" data-bind="value:editingName " />
+</div>
+
+<div id="board-delete-dialog" class="hide" data-bind="with:activeEditingBoard">
+    <h4>Are you sure you want to delete the board:</h4>
+    <div data-bind="text:boardName"></div>
+</div>
+
+@section ScriptAfterBody
+{
+    <script>
+        $(function () {
+            // Set the binding for the created board and call its initialization
+            NK.ViewModels.ApplicationViewmodel.init(function () {
+                ko.applyBindings(NK.ViewModels.ApplicationViewmodel);
+            });
+        });
+    </script>
+}

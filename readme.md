@@ -1,4 +1,4 @@
-Notekeeper is a small visual note-board keeping application built during the learning process for several libraries and tools.
+Notekeeper is a small visual note-board keeping application.
 ========================================
 
 
@@ -28,4 +28,6 @@ Lastly the entity framework Code First aproach was used to create and interact w
  1. Preferably Visual Studio 2012 RC or the Web Express edition
  2. Preferably SQL Server 2008 R2 Express edition.
  3. Change the Db connection string in the web config file to point to your SQL Server instance.
+ 4. Run CodeFirst migrations.
+ 5. Start the app.
 
